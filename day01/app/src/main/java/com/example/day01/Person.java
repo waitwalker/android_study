@@ -62,7 +62,7 @@ class Boat extends Animal implements Thing, Nation {
 
     @Override
     void animalType() {
-        
+
     }
 
     @Override
@@ -73,5 +73,25 @@ class Boat extends Animal implements Thing, Nation {
     @Override
     public String comeFrom() {
         return "China";
+    }
+}
+
+class Father {
+    public String money;
+
+    void save() {
+
+    }
+}
+
+class Son extends Father {
+
+    void moneyCount() {
+        Log.d("", "" + money);
+    }
+
+    @Override
+    void save() {
+        super.save();
     }
 }
