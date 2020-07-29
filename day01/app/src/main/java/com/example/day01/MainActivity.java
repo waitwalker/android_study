@@ -48,6 +48,16 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("1234","当前日期:"+ localDateTime.getYear());
 
+        String string = new String("123456789");
+        Log.d("134567","string:"+string);
+
+        char list[] = string.toCharArray();
+
+        Log.d("1456","list:"+ list);
+
+        byte bytes[] = string.getBytes();
+        Log.d("12345","bytes:"+bytes);
+
         new Action(){
             @Override
             public void execute(String content) {
