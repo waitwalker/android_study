@@ -42,4 +42,11 @@
         android:layout_above="@id/text4"
         />
 
+    <Button
+        android:layout_width="100dp"
+        android:layout_below="@id/text3"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/holo_purple"
+        android:layout_height="70dp"/>
+
 </RelativeLayout>
