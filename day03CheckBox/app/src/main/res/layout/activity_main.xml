@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <CheckBox
+        android:id="@+id/apple"
+        android:textSize="20sp"
+        android:text="苹果"
+        android:layout_width="200dp"
+        android:layout_height="50dp"/>
+    <CheckBox
+        android:layout_below="@id/apple"
+        android:id="@+id/banana"
+        android:textSize="20sp"
+        android:text="香蕉"
+        android:layout_width="200dp"
+        android:layout_height="50dp"/>
+    <CheckBox
+        android:layout_below="@id/banana"
+        android:id="@+id/orange"
+        android:textSize="20sp"
+        android:text="橘子"
+        android:layout_width="200dp"
+        android:layout_height="50dp"/>
+
+    <Button
+        android:layout_below="@id/orange"
+        android:id="@+id/commit"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:text="提交"
+        android:layout_width="200dp"
+        android:layout_height="60dp"/>
+
+
+</RelativeLayout>
