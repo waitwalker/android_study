@@ -36,13 +36,27 @@ public class NewsAdapter extends BaseAdapter {
     @SuppressLint("ViewHolder")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        convertView = LayoutInflater.from(mContext).inflate(R.layout.item_layout, parent, false);
-        TextView textViewImage = convertView.findViewById(R.id.text_image);
-        TextView textView1 = convertView.findViewById(R.id.text1);
-        TextView textView2 = convertView.findViewById(R.id.text2);
-        textViewImage.setText(position);
-        textView1.setText(mData.get(position).getTitle());
-        textView2.setText(mData.get(position).getContent());
+        ViewHolder viewHolder = null;
+        if (viewHolder == null) {
+            viewHolder = new ViewHolder();
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.item_layout, parent,false);
+            viewHolder.textView1 = convertView.findViewById(R.id.text1);
+            viewHolder.textView2 = convertView.findViewById(R.id.text2);
+            viewHolder.textView = convertView.findViewById(R.id.text_image);
+            convertView.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) convertView.getTag();
+        }
+        viewHolder.textView1.setText(mData.get(position).getTitle());
+        viewHolder.textView2.setText(mData.get(position).getContent());
+        viewHolder.textView.setText(mData.get(position).getCurrentIndex());
+
         return convertView;
+    }
+
+    static class ViewHolder {
+        TextView textView;
+        TextView textView1;
+        TextView textView2;
     }
 }

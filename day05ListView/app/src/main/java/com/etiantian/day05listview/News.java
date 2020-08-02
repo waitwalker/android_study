@@ -19,9 +19,20 @@ public class News {
 
     String title;
     String content;
-    News(String title, String content) {
+
+    public String getCurrentIndex() {
+        return currentIndex;
+    }
+
+    public void setCurrentIndex(String currentIndex) {
+        this.currentIndex = currentIndex;
+    }
+
+    String currentIndex;
+    News(String title, String content, String currentIndex) {
         this.title = title;
         this.content = content;
+        this.currentIndex = currentIndex;
     }
 
 

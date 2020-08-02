@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.listview);
         mData = new LinkedList<News>();
         for (int i = 0; i < 20; i++) {
-            mData.add(new News("新闻标题号:" + i, "新闻内容号:" + i));
+            String string = String.valueOf(i);
+            mData.add(new News("新闻标题号:" + i, "新闻内容号:" + i, string));
         }
 
         mAdapter = new NewsAdapter(mData, mContext);
