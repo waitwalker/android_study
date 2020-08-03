@@ -298,8 +298,94 @@
                     android:layout_height="wrap_content"/>
             </LinearLayout>
         </LinearLayout>
-
-
-
     </HorizontalScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@mipmap/video"
+                android:layout_height="240dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp">
+                    <ImageView
+                        android:background="@mipmap/play"
+                        android:layout_centerInParent="true"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"/>
+                </RelativeLayout>
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/header_1"
+                        android:background="@mipmap/avatar"
+                        android:layout_centerVertical="true"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"/>
+
+                    <RelativeLayout
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@id/header_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:layout_alignParentTop="true"
+                            android:textSize="20sp"
+                            android:text="动画乐园"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_marginBottom="5dp"
+                            android:layout_alignParentBottom="true"
+                            android:textSize="15sp"
+                            android:text="欢迎关注"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:paddingRight="10dp"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_centerVertical="true"
+                        android:textSize="22sp"
+                        android:id="@+id/text_11"
+                        android:text="江湖家家户户"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:paddingLeft="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/text_11"
+                        android:background="@mipmap/dot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
