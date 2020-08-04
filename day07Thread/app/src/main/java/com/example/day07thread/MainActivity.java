@@ -2,12 +2,16 @@ package com.example.day07thread;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CompoundButton;
 
 import java.util.concurrent.FutureTask;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CompoundButton.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,25 @@ public class MainActivity extends AppCompatActivity {
             Log.d("1","Callable 返回值:"+ string);
         } catch (Exception e) {
             Log.d("1","ee"+e.getLocalizedMessage());
+        }
+
+        Button button = findViewById(R.id.button);
+        Button button1 = findViewById(R.id.button2);
+
+        button.setOnClickListener(this);
+        button1.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        final Intent intent = new Intent(MainActivity.this, MyService1.class);
+        switch (v.getId()) {
+            case R.id.button:
+                startService(intent);
+                break;
+            case R.id.button2:
+                stopService(intent);
+                break;
         }
     }
 }
