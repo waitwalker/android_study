@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
 
         int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS);
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new  String[]{Manifest.permission.READ_CONTACTS}, 0);
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS}, 0);
         }
     }
 
@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
                 getContact();
                 break;
             case R.id.button2:
+                addContact();
                 break;
         }
     }
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
 
         int permission = ContextCompat.checkSelfPermission(this,Manifest.permission.WRITE_CONTACTS);
         if (permission != PackageManager.PERMISSION_GRANTED) {
-
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_CONTACTS},0);
         }
     }
 }
