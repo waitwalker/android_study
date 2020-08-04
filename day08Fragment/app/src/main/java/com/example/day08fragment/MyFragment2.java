@@ -1,6 +1,7 @@
 package com.example.day08fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,11 @@ public class MyFragment2 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        assert getArguments() != null;
+        String string = (String) getArguments().getString("name");
+
+        Log.d("1","传个Fragment的数据:"+ string);
         return inflater.inflate(R.layout.fragment_layout2, container,false);
     }
 }

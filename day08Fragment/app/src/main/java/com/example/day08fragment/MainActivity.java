@@ -14,6 +14,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         MyFragment2 fragment2 = new MyFragment2();
+
+        Bundle bundle = new Bundle();
+        bundle.putString("name","张三");
+        fragment2.setArguments(bundle);
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
