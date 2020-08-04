@@ -28,6 +28,9 @@ public class ThirdActivity extends AppCompatActivity implements CompoundButton.O
 
         Button button = findViewById(R.id.button4);
         button.setOnClickListener(this);
+
+        Button button2 = findViewById(R.id.button6);
+        button2.setOnClickListener(this);
     }
 
     @Override
@@ -39,6 +42,11 @@ public class ThirdActivity extends AppCompatActivity implements CompoundButton.O
                 setResult(1234,intent);
                 finish();
                 break;
+            case R.id.button6:
+                Intent intent1 = new Intent(this, ThirdActivity.class);
+                intent1.putExtra("name","ahh");
+                startActivityForResult(intent1,12345);
+
         }
     }
 }

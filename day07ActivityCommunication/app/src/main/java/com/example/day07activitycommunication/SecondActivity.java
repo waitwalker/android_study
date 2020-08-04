@@ -43,6 +43,7 @@ public class SecondActivity extends AppCompatActivity implements CompoundButton.
                 finish();
                 break;
             case R.id.button5:
+                // Activity stand启动模式
                 Intent intent1 = new Intent(this,SecondActivity.class);
                 intent1.putExtra("name","2中的传值");
                 startActivityForResult(intent1,12345);
