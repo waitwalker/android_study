@@ -19,6 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver
+            android:permission="true"
+            android:name="com.example.day07broadcastreceiver.StaticReceiver">
+            <intent-filter>
+                <action android:name="static_send"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
