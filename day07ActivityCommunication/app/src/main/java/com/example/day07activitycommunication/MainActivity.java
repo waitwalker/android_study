@@ -19,10 +19,11 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
 
         Button button = findViewById(R.id.button);
         Button button2 = findViewById(R.id.button2);
+        Button button3 = findViewById(R.id.button7);
 
         button.setOnClickListener(this);
         button2.setOnClickListener(this);
-
+        button3.setOnClickListener(this);
     }
 
     @Override
@@ -41,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
 
                 startActivityForResult(intent1,1234);
                 break;
+            case R.id.button7:
+                Intent intent2 = new Intent(this,FourthActivity.class);
+                startActivityForResult(intent2,456);
         }
     }
 
