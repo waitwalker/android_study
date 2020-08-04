@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import java.util.concurrent.FutureTask;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -11,12 +13,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // 方式1
         MyThread thread = new MyThread();
         thread.start();
 
+        // 方式2
         RunableThread runableThread = new RunableThread();
         Thread thread1 = new Thread(runableThread);
         thread1.start();
 
+        // 方式3
+        CallableThread callableThread = new CallableThread();
+        FutureTask<String> futureTask = new FutureTask<String>(callableThread);
+        Thread thread2 = new Thread(futureTask);
+        thread2.start();
     }
 }
