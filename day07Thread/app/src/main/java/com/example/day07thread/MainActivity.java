@@ -13,5 +13,10 @@ public class MainActivity extends AppCompatActivity {
 
         MyThread thread = new MyThread();
         thread.start();
+
+        RunableThread runableThread = new RunableThread();
+        Thread thread1 = new Thread(runableThread);
+        thread1.start();
+
     }
 }
