@@ -13,4 +13,12 @@
         android:text="Button"
         tools:layout_editor_absoluteX="73dp"
         tools:layout_editor_absoluteY="196dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2页面上按钮"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="351dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

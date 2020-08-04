@@ -28,6 +28,9 @@ public class SecondActivity extends AppCompatActivity implements CompoundButton.
 
         Button button = findViewById(R.id.button3);
         button.setOnClickListener(this);
+
+        Button button2 = findViewById(R.id.button5);
+        button2.setOnClickListener(this);
     }
 
     @Override
@@ -39,6 +42,10 @@ public class SecondActivity extends AppCompatActivity implements CompoundButton.
                 setResult(123, intent);
                 finish();
                 break;
+            case R.id.button5:
+                Intent intent1 = new Intent(this,SecondActivity.class);
+                intent1.putExtra("name","2中的传值");
+                startActivityForResult(intent1,12345);
         }
     }
 }
