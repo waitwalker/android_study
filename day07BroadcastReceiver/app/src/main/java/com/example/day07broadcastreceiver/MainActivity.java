@@ -11,6 +11,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     DynamicBReceiver dynamicBReceiver;
+    NetReceiver netReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("com.example.day07broadcastreceiver.DynamicBReceiver");
         registerReceiver(dynamicBReceiver,intentFilter);
+
+        // 2.1 接收系统提供的广播服务(不同App之间的广播)
+        netReceiver = new NetReceiver();
+        IntentFilter filter = new IntentFilter();
+        intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+        registerReceiver(netReceiver,filter);
     }
 
     @Override
@@ -38,5 +45,8 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         // 1.2 取消动态注册广播接收器
         unregisterReceiver(dynamicBReceiver);
+
+        // 2.2 取消注册广播 停止接收系统发出的数据
+        unregisterReceiver(netReceiver);
     }
 }
