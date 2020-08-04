@@ -15,10 +15,15 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <fragment
-        android:layout_below="@id/text"
-        android:name="com.example.day08fragment.MyFragment"
+
+    <RelativeLayout
+        android:id="@+id/rl_fragment"
         android:layout_width="wrap_content"
-        android:layout_height="100dp"/>
+        android:layout_height="wrap_content"/>
+<!--    <fragment-->
+<!--        android:layout_below="@id/text"-->
+<!--        android:name="com.example.day08fragment.MyFragment"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="100dp"/>-->
 
 </RelativeLayout>
