@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.button1:
-                String string = editText.toString().trim();
+                String string = editText.getText().toString().trim();
                 SharedPreferences sharedPreferences = getSharedPreferences("shared", MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("name",string);
