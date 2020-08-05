@@ -10,6 +10,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.util.concurrent.Callable;
+
+import javax.security.auth.callback.Callback;
+
 public class MyFragment2 extends Fragment {
 
     @Nullable
@@ -21,5 +25,13 @@ public class MyFragment2 extends Fragment {
 
         Log.d("1","传个Fragment的数据:"+ string);
         return inflater.inflate(R.layout.fragment_layout2, container,false);
+    }
+
+    public void setCalllBack(CallBack calllBack) {
+        calllBack.getResult("123");
+    }
+
+    public interface CallBack {
+        void getResult(String result);
     }
 }
