@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
                 Toast.makeText(getApplicationContext(),"更新数据成功", Toast.LENGTH_LONG).show();
                 break;
             case R.id.button3:
+                database.delete("person","personid = ?", new String[]{"1"});
+                Toast.makeText(getApplicationContext(),"删除数据成功", Toast.LENGTH_LONG).show();
                 break;
             case R.id.button4:
                 break;
