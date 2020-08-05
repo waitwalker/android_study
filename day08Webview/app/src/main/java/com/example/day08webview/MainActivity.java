@@ -3,6 +3,9 @@ package com.example.day08webview;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.ShapeDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.webkit.WebChromeClient;
@@ -10,10 +13,12 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     WebView webView;
+    int strokeColor = Color.parseColor("#2E3135");//边框颜色
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setSupportZoom(true);//支持缩放
         webSettings.setJavaScriptEnabled(true);
         webView.loadUrl("https://developer.android.google.cn/");
+
+        GradientDrawable gradientDrawable = new GradientDrawable();
+        //gradientDrawable.setColor(strokeColor);
+        gradientDrawable.setCornerRadius(10);
+        gradientDrawable.setStroke(10, strokeColor);
+        TextView textView = findViewById(R.id.textView);
+        textView.setBackground(gradientDrawable);
 
     }
 
