@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSON;
+
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -57,6 +59,10 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
                 }
 
                 Log.d("1","JSONObj:"+jsonObject);
+
+                Object obj = JSON.parseObject(jsonStr);
+
+                Log.d("1","fastjson obj:" + obj);
                 textView.setText(map.get("response").toString());
             }
         }
