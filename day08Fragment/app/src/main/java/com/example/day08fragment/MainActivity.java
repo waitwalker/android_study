@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +19,12 @@ public class MainActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putString("name","张三");
         fragment2.setArguments(bundle);
+        fragment2.setCalllBack(new MyFragment2.CallBack() {
+            @Override
+            public void getResult(String result) {
+                Log.d("1","result:" + result);
+            }
+        });
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
