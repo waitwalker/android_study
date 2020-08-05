@@ -3,6 +3,7 @@ package com.example.day08network;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -13,6 +14,7 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
 
     private String url = "https://www.baidu.com/home/other/data/weatherInfo?city=%E6%AD%A6%E6%B1%89&indextype=manht&_req_seqid=0xfc7ab7ff0008878d&asyn=1&t=1588658358650&sid=1421_31125_21122_31426_31342_31270_31464_31228_30823_26350_31164";
 
+    @SuppressLint("HandlerLeak")
     private Handler myHandler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
@@ -39,6 +42,21 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             if (msg.obj != null) {
                 Log.d("1","message:" + msg.obj);
                 Map map = (Map) msg.obj;
+                String jsonStr = map.get("response").toString();
+                Log.d("1","jsonStr:" + jsonStr);
+                JSONObject jsonObject = null;
+                try {
+                    jsonObject = new JSONObject(jsonStr);
+                    Log.d("1","jsonObj:"+jsonObject);
+
+                    Object data = jsonObject.get("data");
+                    Log.d("1","data:" + data);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                Log.d("1","JSONObj:"+jsonObject);
                 textView.setText(map.get("response").toString());
             }
         }
