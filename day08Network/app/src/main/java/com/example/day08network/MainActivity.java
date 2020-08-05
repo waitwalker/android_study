@@ -1,8 +1,11 @@
 package com.example.day08network;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +31,18 @@ import okhttp3.Response;
 public class MainActivity extends AppCompatActivity implements CompoundButton.OnClickListener {
 
     private String url = "https://www.baidu.com/home/other/data/weatherInfo?city=%E6%AD%A6%E6%B1%89&indextype=manht&_req_seqid=0xfc7ab7ff0008878d&asyn=1&t=1588658358650&sid=1421_31125_21122_31426_31342_31270_31464_31228_30823_26350_31164";
+
+    private Handler myHandler = new Handler() {
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            super.handleMessage(msg);
+            if (msg.obj != null) {
+                Log.d("1","message:" + msg.obj);
+                Map map = (Map) msg.obj;
+                textView.setText(map.get("response").toString());
+            }
+        }
+    };
 
     TextView textView;
     @Override
@@ -60,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         OkHttpClient client = new OkHttpClient.Builder().build();
 
         // 2创建request对象
-        Request request = new Request.Builder().url(url).get().build();
+        final Request request = new Request.Builder().url(url).get().build();
 
         // 3创建Call对象
         Call call = client.newCall(request);
@@ -74,6 +89,11 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
                 String result = Objects.requireNonNull(response.body()).string();
                 Log.d("1","result:"+ result);
+                Message message = myHandler.obtainMessage();
+                Map map = new HashMap();
+                map.put("response", result);
+                message.obj = map;
+                myHandler.sendMessage(message);
                 //textView.setText(result);
             }
         });
