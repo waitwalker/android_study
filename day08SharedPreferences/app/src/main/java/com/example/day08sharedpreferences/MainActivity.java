@@ -44,6 +44,9 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
                 }
                 break;
             case R.id.button2:
+                SharedPreferences sharedPreferences1 = getSharedPreferences("shared", MODE_PRIVATE);
+                String string1 = sharedPreferences1.getString("name", "无");
+                textView.setText(string1);
                 break;
         }
     }
