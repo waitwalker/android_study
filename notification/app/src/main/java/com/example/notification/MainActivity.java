@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     private String kChannelID_2 = "Channel_ID_2";
     private String kChannelName_2 = "通知频道2";
 
+    // 通知ID
     private int commonNotificationID = 0x11;
 
 
