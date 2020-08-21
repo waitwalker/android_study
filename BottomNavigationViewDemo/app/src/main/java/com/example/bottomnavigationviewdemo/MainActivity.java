@@ -17,6 +17,7 @@ import com.example.bottomnavigationviewdemo.fragment.BlankFragment;
 import com.example.bottomnavigationviewdemo.fragment.HomeFragment;
 import com.example.bottomnavigationviewdemo.fragment.MineFragment;
 import com.example.bottomnavigationviewdemo.fragment.VideoFragment;
+import com.example.bottomnavigationviewdemo.view.MTTViewPager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.LinkedList;
@@ -25,7 +26,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, ViewPager.OnPageChangeListener{
 
     private BottomNavigationView mBottomNavigationView;
-    private ViewPager mViewPager;
+    private MTTViewPager mViewPager;
 
     private HomeFragment homeFragment;
     private AudioFragment audioFragment;

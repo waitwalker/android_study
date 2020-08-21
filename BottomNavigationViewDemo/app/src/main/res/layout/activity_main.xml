@@ -14,11 +14,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <androidx.viewpager.widget.ViewPager
+    <com.example.bottomnavigationviewdemo.view.MTTViewPager
         android:layout_above="@id/bottom_navigation"
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
     
 
 
