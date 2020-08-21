@@ -22,8 +22,7 @@ public class AudioFragment extends Fragment {
     }
 
     public static AudioFragment newInstance() {
-        AudioFragment fragment = new AudioFragment();
-        return fragment;
+        return new AudioFragment();
     }
 
     @Override
@@ -35,6 +34,6 @@ public class AudioFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_audio, container, false);
     }
 }
