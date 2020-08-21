@@ -9,6 +9,8 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
 
 import com.example.bottomnavigationviewdemo.fragment.AudioFragment;
 import com.example.bottomnavigationviewdemo.fragment.BlankFragment;
@@ -20,7 +22,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, ViewPager.OnPageChangeListener{
 
     private BottomNavigationView mBottomNavigationView;
     private ViewPager mViewPager;
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         initView();
         initData();
         initAdapter();
+        initEvent();
     }
 
     private void initView() {
@@ -63,6 +66,56 @@ public class MainActivity extends AppCompatActivity {
     private void initAdapter() {
         pagerAdapter = new HomePageFragmentAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(pagerAdapter);
+    }
+
+    private void initEvent() {
+        mBottomNavigationView.setOnNavigationItemSelectedListener(this);
+        mViewPager.addOnPageChangeListener(this);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        int itemId = item.getItemId();
+
+        String string = item.getTitle().toString();
+
+        Log.d("1","item:" + item);
+
+        if (string.equals("首页")) {
+            itemId = 0;
+        } else if (string.equals("音频")) {
+            itemId = 1;
+        } else if (string.equals("视频")) {
+            itemId = 2;
+        } else if (string.equals("我的")) {
+            itemId = 3;
+        }
+
+        mViewPager.setCurrentItem(itemId);
+        return true;
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        Log.d("1","123");
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        Log.d("1","123");
+    }
+
+    // bottom navigation view
+    @Override
+    public void onPageSelected(int position) {
+        Log.d("1","123");
+        mBottomNavigationView.getMenu().getItem(position).setChecked(true);
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+        Log.d("1","123");
     }
 
     private class HomePageFragmentAdapter extends FragmentPagerAdapter {
