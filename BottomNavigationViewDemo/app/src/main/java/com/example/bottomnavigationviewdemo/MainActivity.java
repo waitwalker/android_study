@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         fragmentList.add(audioFragment);
         fragmentList.add(videoFragment);
         fragmentList.add(mineFragment);
-
     }
 
     private void initAdapter() {

@@ -8,6 +8,7 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         app:menu="@menu/menu"
+        app:labelVisibilityMode="labeled"
         android:background="@android:color/white"
         android:layout_alignParentBottom="true"
         android:id="@+id/bottom_navigation"

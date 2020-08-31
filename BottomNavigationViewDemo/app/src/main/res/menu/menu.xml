@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:icon="@mipmap/home_normal"
+        android:id="@+id/icon_home"
         android:title="首页" />
     <item
+        android:icon="@mipmap/audio_normal"
+        android:id="@+id/icon_audio"
         android:title="音频" />
     <item
+        android:icon="@mipmap/video_normal"
+        android:id="@+id/icon_video"
         android:title="视频" />
     <item
+        android:icon="@mipmap/mine_normal"
+        android:id="@+id/icon_mine"
         android:title="我的" />
 </menu>
