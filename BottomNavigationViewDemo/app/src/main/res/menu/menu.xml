@@ -3,17 +3,17 @@
     <item
         android:icon="@mipmap/home_normal"
         android:id="@+id/icon_home"
-        android:title="首页" />
+        android:title="@string/home_item_title" />
     <item
         android:icon="@mipmap/audio_normal"
         android:id="@+id/icon_audio"
-        android:title="音频" />
+        android:title="@string/audio_item_title" />
     <item
         android:icon="@mipmap/video_normal"
         android:id="@+id/icon_video"
-        android:title="视频" />
+        android:title="@string/video_item_title" />
     <item
         android:icon="@mipmap/mine_normal"
         android:id="@+id/icon_mine"
-        android:title="我的" />
+        android:title="@string/mine_item_title" />
 </menu>

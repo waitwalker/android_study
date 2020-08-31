@@ -76,22 +76,23 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        int itemId = item.getItemId();
+        int itemId = 0;
 
-        String string = item.getTitle().toString();
-
-        Log.d("1","item:" + item);
-
-        if (string.equals("首页")) {
-            itemId = 0;
-        } else if (string.equals("音频")) {
-            itemId = 1;
-        } else if (string.equals("视频")) {
-            itemId = 2;
-        } else if (string.equals("我的")) {
-            itemId = 3;
+        //mViewPager.setCurrentItem(itemId);
+        switch (item.getItemId()) {
+            case R.id.icon_home:
+                itemId = 0;
+                break;
+            case R.id.icon_audio:
+                itemId = 1;
+                break;
+            case R.id.icon_video:
+                itemId = 2;
+                break;
+            case R.id.icon_mine:
+                itemId = 3;
+                break;
         }
-
         mViewPager.setCurrentItem(itemId);
         return true;
     }
